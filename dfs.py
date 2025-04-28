@@ -3,10 +3,10 @@ def dfs(graph, start, end, visited=None): #функция обхода в глу
         visited = [start]
     if start == end: #check end
         return visited #comment 1
-    for neighbor in graph.get(start, []):
-        if neighbor not in visited:
-            new_path = dfs(graph, neighbor, end, visited + [neighbor])
-            if new_path:
+    for neighbor in graph.get(start, []): #новый комментарий 1
+        if neighbor not in visited: #новый комментарий 2
+            new_path = dfs(graph, neighbor, end, visited + [neighbor]) #новый комментарий 3
+            if new_path: #новый комментарий 4
                 return new_path
     return visited
 def validate_vertices(graph, start, end):
