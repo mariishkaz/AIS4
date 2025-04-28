@@ -1,8 +1,8 @@
-def dfs(graph, start, end, visited=None):
-    if visited is None:
+def dfs(graph, start, end, visited=None): #функция обхода в глубина
+    if visited is None: #проверка пути
         visited = [start]
-    if start == end:
-        return visited
+    if start == end: #проверка конца
+        return visited #комментарий 1
     for neighbor in graph.get(start, []):
         if neighbor not in visited:
             new_path = dfs(graph, neighbor, end, visited + [neighbor])
